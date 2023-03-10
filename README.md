@@ -52,4 +52,54 @@ Move 8 Left
 
 Note: for both greedy and A* search you need to come up with a acceptable heuristic (Hint: Consider a modified version of h2)
 
+____________________________________________________________________________________________________________________________________________________________
 
+Programming Language		:  Python
+
+Structure of the code: 		-->	The code strats from calling main() which instantiates class Expense8Puzzle with a constructor for taking start and goal files and here I 
+					have implemented search algorithms such as DFS, BFS, DLS, IDS, UCS, A*, GREEDY ARE IMPLEMENTED along with few helper fucntion to read 
+					files(start and goal text files), getting empty tile position, movements, generating successors, and in  addition to these I have implemented 
+					few other methods as helpers (heuristic, finding path cost along the path from start to goal, movements for tile being moved with respect to 
+					zero tile), (swap, getting next states, read start and goal file state) for BFS alone.
+
+			     	-->	Implemented the code in different function to get a clear understanding at a first glance.
+
+				-->	The different files used are: start.txt, goal.txt, dump.txt, EXPENSE_8_PUZZLE.py, 
+
+EXPENSE_8_PUZZLE.py:		-->	This contains the entire code main method, helper functions, and search methods to solve the puzzle
+
+How to run the code?		-->	Uninformed & Informed Search
+
+The command line arguments should follow format like in the below
+PythonFilename.py <start-file> <goal-file> <method> <dump-flag>
+
+•	<start-file> and <goal-file> are required.
+•	<method> can be
+o	bfs - Breadth First Search
+o	ucs - Uniform Cost Search
+o	dfs - Depth First Search
+o	dls - Depth Limited Search (Note: Depth Limit will be obtained as a Console Input) you will be promted for an input depth limit
+o	ids - Iterative Deepening Search 
+o	greedy - Greedy Seach
+o	a* - 
+•	If <dump-flag>  either ‘true’ or ‘false’
+command line syntax ex: python3 EXPENSE_8_PUZZLE.py start.txt goal.txt a* true
+
+versions: 
+python version : 3.11.2 (supports 64 bit system, may work on 32 bit too)
+pip version : 22.3.1
+numpy version : 1.24.2
+
+modules to be installed and imported: 
+import sys
+from queue import Queue, PriorityQueue
+from queue import LifoQueue
+import numpy as np
+
+Note: 
+The input files which are given in the command line arguments should be located in the same folder where the code is stored.
+Dump file must be closed and opened every time after excecuting one search method for new data to be shown in the file.
+DLS and IDS both prompt for depth limit before running the algorithm.
+Sometime the terminal will not be able t show the entire out as few algorithms might use more buffer space.
+tab space and exact format of output may vary but details are entailed as the way they are.
+						
